@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GReads</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="funny_news">Funny news</string>
+    <string name="entertainment_news">Entertainment News</string>
+    <string name="sports_news">Sports News</string>
+    <string name="for_u_news">For You News</string>
+    <string name="food_news">Food News</string>
+
+</resources>
