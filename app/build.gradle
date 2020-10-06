@@ -19,6 +19,13 @@ android {
     }
 }
 
+// Gradle Plugin 2.0+
+android {
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
+}
+
 dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
