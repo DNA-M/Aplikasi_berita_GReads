@@ -10,6 +10,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.ActionMode;
@@ -20,7 +21,10 @@ import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
+
 public class MainActivity extends AppCompatActivity {
+
+    public static final  String EXTRA_MESSAGE = "com.example.android.greads.extra.MESSAGE";
     TabLayout tabLayout;
     ViewPager viewPager;
 
@@ -36,18 +40,17 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         tabLayout = findViewById(R.id.tabs);
-        viewPager =findViewById(R.id.view_pager);
+        viewPager = findViewById(R.id.view_pager);
 
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        viewPagerAdapter.addFragment(fragment_untuk_anda.getInstance(),"UNTUK ANDA");
-        viewPagerAdapter.addFragment(fragment_food.getInstance(),"FOOD");
-        viewPagerAdapter.addFragment(fragment_funny.getInstance(),"FUNNY");
-        viewPagerAdapter.addFragment(fragment_sports.getInstance(),"SPORTS");
-        viewPagerAdapter.addFragment(fragment_entertainment.getInstance(),"ENTERTAINMENT");
+        viewPagerAdapter.addFragment(new fragment_general(), "GENERAL");
+        viewPagerAdapter.addFragment(new fragment_health(), "HEALTH");
+        viewPagerAdapter.addFragment(new fragment_business(), "BUSINESS");
+        viewPagerAdapter.addFragment(new fragment_sports(), "SPORTS");
+        viewPagerAdapter.addFragment(new fragment_entertainment(), "ENTERTAINMENT");
 
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-
     }
 
     @Override
@@ -59,22 +62,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case R.id.favorite:
                 Toast.makeText(this, "Favorite", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.share:
-                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.settings:
                 Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
                 return true;
-            case R.id.contact:
-                Toast.makeText(this, "Contact", Toast.LENGTH_SHORT).show();
+            case R.id.about:
+                Intent intent = new Intent(MainActivity.this, About_Page.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+
     }
+
 }

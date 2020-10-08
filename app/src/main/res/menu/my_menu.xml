@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary">
 
     <item
         android:id="@+id/favorite"
@@ -8,30 +9,20 @@
         android:checked="false"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_favorite_24"
-        android:title="@string/favorite"
-        android:visible="true"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/share"
-        android:checkable="false"
-        android:checked="false"
-        android:enabled="true"
-        android:icon="@drawable/ic_baseline_share_24"
-        android:title="@string/share"
+        android:title="Favorite"
         android:visible="true"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/settings"
         android:icon="@drawable/ic_baseline_settings_24"
-        android:title="@string/settings"
+        android:title="Settings"
         app:showAsAction="never" />
 
     <item
-        android:title="Contact"
-        android:icon="@drawable/ic_baseline_contact_support_24"
-        android:id="@+id/contact"
-        app:showAsAction="never"/>
+        android:title="About"
+        android:icon="@drawable/ic_baseline_about"
+        android:id="@+id/about"
+        app:showAsAction="never" />
 
 </menu>

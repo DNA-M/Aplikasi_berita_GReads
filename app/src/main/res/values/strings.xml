@@ -8,10 +8,10 @@
     <string name="sports_news">Sports News</string>
     <string name="for_u_news">For You News</string>
     <string name="food_news">Food News</string>
-    <string name="favorite">Favorite</string>
-    <string name="share">Share</string>
-    <string name="search">Search</string>
-    <string name="settings">Settings</string>
-    <string name="refresh">Refresh</string>
+    <string name="news_desc">News Desc</string>
+    <string name="news_date">News Date</string>
+    <string name="news_title">News Title</string>
+    <string name="tv_name">tv Name</string>
+    <string name="title_activity_about">About Page</string>
 
 </resources>
