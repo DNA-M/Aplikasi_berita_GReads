@@ -6,16 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+public class Setting extends AppCompatActivity {
 
-public class About_Page extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about__page);
+        setContentView(R.layout.activity_setting);
 
-        Intent about = getIntent();
-        View view = findViewById(R.id.tv_about);
+        Intent setting = getIntent();
+        View view = findViewById(R.id.tv_setting);
     }
-
 }

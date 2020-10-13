@@ -3,15 +3,13 @@
 
     <!-- TODO: Remove or change this placeholder text -->
 
-    <string name="funny_news">Funny news</string>
-    <string name="entertainment_news">Entertainment News</string>
-    <string name="sports_news">Sports News</string>
-    <string name="for_u_news">For You News</string>
-    <string name="food_news">Food News</string>
     <string name="news_desc">News Desc</string>
     <string name="news_date">News Date</string>
     <string name="news_title">News Title</string>
     <string name="tv_name">tv Name</string>
-    <string name="title_activity_about">About Page</string>
+    <string name="title_activity_about">About</string>
+    <string name="title_activity_setting">Setting</string>
+    <string name="about">GReads adalah aplikasi baca berita yang menyediakan berbagai kategori berita terupdate.</string>
+    <string name="copyright">Kelompok 4 DNA-M</string>
 
 </resources>

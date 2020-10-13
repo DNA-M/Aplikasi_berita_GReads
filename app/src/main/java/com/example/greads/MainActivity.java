@@ -63,15 +63,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()) {
-            case R.id.favorite:
-                Toast.makeText(this, "Favorite", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.settings:
-                Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
+
+            case R.id.setting:
+                Intent setting = new Intent(MainActivity.this, Setting.class);
+                startActivity(setting);
                 return true;
             case R.id.about:
-                Intent intent = new Intent(MainActivity.this, About_Page.class);
-                startActivity(intent);
+                Intent about = new Intent(MainActivity.this, About_Page.class);
+                startActivity(about);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
