@@ -9,7 +9,8 @@
     <string name="tv_name">tv Name</string>
     <string name="title_activity_about">About</string>
     <string name="title_activity_setting">Setting</string>
-    <string name="about">GReads adalah aplikasi baca berita yang menyediakan berbagai kategori berita terupdate.</string>
+    <string name="about">Salam berita, dari kami.</string>
     <string name="copyright">Kelompok 4 DNA-M</string>
+    <string name="versi">Versi 20.1.0</string>
 
 </resources>
