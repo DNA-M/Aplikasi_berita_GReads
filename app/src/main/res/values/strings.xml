@@ -11,6 +11,7 @@
     <string name="title_activity_setting">Setting</string>
     <string name="about">Salam berita, dari kami.</string>
     <string name="copyright">Kelompok 4 DNA-M</string>
-    <string name="versi">Versi 20.1.0</string>
+    <string name="versi">Versi 1.0.0</string>
+    <string name="title_news_detail">News Detail</string>
 
 </resources>
