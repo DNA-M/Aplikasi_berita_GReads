@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.greads.API.ApiService;
 import com.example.greads.API.Server;
 import com.example.greads.adapter.NewsAdapter;
+import com.example.greads.BuildConfig;
 import com.example.greads.model.News_Model;
 import com.example.greads.model.Response_News_Model;
 
@@ -31,11 +32,12 @@ import retrofit2.Response;
 public class fragment_business extends Fragment {
 
     RecyclerView rv;
-    NewsAdapter newsAdapter;
     List<News_Model> newsModelList = new ArrayList<>();
-    final String category = "business";
+    NewsAdapter newsAdapter;
     private ProgressDialog progressDialog;
     ApiService api;
+    final String category = "business";
+
 
 
     public fragment_business() {
@@ -56,6 +58,7 @@ public class fragment_business extends Fragment {
         rv.setAdapter(newsAdapter);
         newsAdapter.notifyDataSetChanged();
         refresh();
+
         return rootview;
     }
 
@@ -87,5 +90,3 @@ public class fragment_business extends Fragment {
 
     }
 }
-
-

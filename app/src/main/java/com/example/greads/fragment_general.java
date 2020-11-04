@@ -34,7 +34,6 @@ public class fragment_general extends Fragment {
     RecyclerView rv;
     NewsAdapter newsAdapter;
     List<News_Model> newsModelList = new ArrayList<>();
-
     private ProgressDialog progressDialog;
     ApiService api;
 

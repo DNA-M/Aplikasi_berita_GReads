@@ -48,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter.addFragment(new fragment_business(), "BUSINESS");
         viewPagerAdapter.addFragment(new fragment_sports(), "SPORTS");
         viewPagerAdapter.addFragment(new fragment_entertainment(), "ENTERTAINMENT");
+        viewPagerAdapter.addFragment(new fragment_science(), "SCIENCE");
+
 
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);

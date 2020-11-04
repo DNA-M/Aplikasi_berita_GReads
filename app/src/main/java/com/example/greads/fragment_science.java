@@ -30,7 +30,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class fragment_sports extends Fragment {
+public class fragment_science extends Fragment {
 
     RecyclerView rv;
     NewsAdapter newsAdapter;
@@ -38,9 +38,9 @@ public class fragment_sports extends Fragment {
 
     private ProgressDialog progressDialog;
     ApiService api;
-    final String category = "sports";
+    final String category = "science";
 
-    public fragment_sports() {
+    public fragment_science() {
 
     }
 
@@ -48,9 +48,9 @@ public class fragment_sports extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootview = inflater.inflate(R.layout.sports, container, false);
+        View rootview = inflater.inflate(R.layout.science, container, false);
 
-        rv = rootview.findViewById(R.id.rv_sports);
+        rv = rootview.findViewById(R.id.rv_science);
         api = Server.getApiService();
         newsAdapter = new NewsAdapter(getContext(),newsModelList);
 
