@@ -14,4 +14,17 @@
     <string name="versi">Versi 1.0.0</string>
     <string name="title_news_detail">News Detail</string>
 
+    //NAVBAR
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="my_app_title">GReads</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="import_camera">Import</string>
+    <string name="daynight">Day/Night Mode</string>
+    <string name="abouts">About</string>
+    <string name="setting">Setting</string>
+    <string name="chose_daynight">You chose the Day/Night Mode.</string>
+    <string name="chose_abouts">You chose the About.</string>
+    <string name="chose_setting">You chose Setting.</string>
 </resources>
