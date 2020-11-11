@@ -6,18 +6,26 @@ import androidx.appcompat.widget.Toolbar;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 public class News_Detail extends AppCompatActivity {
 
     private ProgressBar mProgressBar;
     private WebView mWebView;
+    String Image, Title, Content,PublishedAt,Author;
+    private ImageView newsImage;
+    private TextView newsTitle, newsContent, newsPublishedAt, newsName, newsUrl;
 
     String url = "https://www.google.com";
 
@@ -32,35 +40,43 @@ public class News_Detail extends AppCompatActivity {
 
         mProgressBar = findViewById(R.id.progress_bar);
         mProgressBar.setMax(100);
+
+        bindView();
+
+        Image= getIntent().getStringExtra("image");
+        Title = getIntent().getStringExtra("title");
+        Content= getIntent().getStringExtra("content");
+        PublishedAt = getIntent().getStringExtra("publishedAt");
+        Author = getIntent().getStringExtra("author");
         url = getIntent().getStringExtra("url");
 
-        mWebView = findViewById(R.id.read_news);
-        mWebView.getSettings().setJavaScriptEnabled(true);
-        mWebView.loadUrl(url);
+
+        Glide.with(getApplicationContext())
+                .load(Image).into(newsImage);
+        newsTitle.setText(Title);
+        newsContent.setText(Content);
+        newsPublishedAt.setText(Time.getTimeAgo(PublishedAt));
+        //newsUrl.setText("Lihat Lebih Lengkap");
+        newsName.setText(Author);
+
+        if(getSupportActionBar() != null)getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mProgressBar.setProgress(0);
-        mWebView.setWebViewClient(new WebViewClient() {
+        mProgressBar.setVisibility(View.GONE);
 
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String newUrl) {
-                view.loadUrl(newUrl);
-                mProgressBar.setProgress(0);
-                return true;
-            }
+    }
 
-            @Override
-            public void onPageStarted(WebView view, String urlStart, Bitmap favicon) {
-                //mProgressBar.setProgress(0);
-                url = urlStart;
-                invalidateOptionsMenu();
+    //public void Url (View view) {
+        //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+   // }
 
-            }
-
-            @Override
-            public void onPageFinished(WebView view, String urlPage) {
-                mProgressBar.setVisibility(View.GONE);
-                invalidateOptionsMenu();
-            }
-        });
+    public void bindView(){
+        newsImage= findViewById(R.id.im_news_image);
+        newsTitle= findViewById(R.id.tv_news_title);
+        newsContent= findViewById(R.id.tv_news_content);
+        newsName = findViewById(R.id.tv_name);
+        newsPublishedAt = findViewById(R.id.tv_news_date);
+       // newsUrl= findViewById(R.id.tv_url);
     }
 
     @Override
@@ -77,31 +93,11 @@ public class News_Detail extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //back pressed
-    @Override
-    public void onBackPressed() {
-        if (mWebView.canGoBack()) {
-            mWebView.goBack();
-        } else {
-            super.onBackPressed();
-        }
-    }
-
     //setup toolbar
     private void setupToolbar() {
         Toolbar toolbar = findViewById(R.id.tv_news_detail);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mWebView.canGoBack()) {
-                    mWebView.goBack();
-                } else {
-                    finish();
-                }
-            }
-        });
     }
 
     //share news
@@ -110,6 +106,6 @@ public class News_Detail extends AppCompatActivity {
         share.setType("text/plain");
         share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
         share.putExtra(Intent.EXTRA_TEXT, url);
-        startActivity(Intent.createChooser(share, "Bagikan ke : "));
+        startActivity(Intent.createChooser(share, "Share to : "));
     }
 }

@@ -44,7 +44,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         final News_Model newsModel = newsModelList.get(position);
         holder.newsTitle.setText(newsModel.getTitle());
         holder.newsDescription.setText(newsModel.getDescription());
-        holder.newsName.setText(newsModel.getName());
+        holder.newsName.setText(newsModel.getAuthor());
         holder.newsPublishedAt.setText(Time.getTimeAgo(newsModel.getPublishedAt()));
         Glide.with(context).load(newsModel.getUrlToImage()).thumbnail(0.5f).into(holder.newsImage);
 
@@ -52,15 +52,16 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(context, News_Detail.class);
-                i.putExtra("image", newsModel.getUrlToImage());
                 i.putExtra("title", newsModel.getTitle());
-                if (newsModel.getDescription() == null) {
-                    i.putExtra("description", "No Description");
-                } else {
-                    i.putExtra("description", newsModel.getDescription());
-                }
+                i.putExtra("image", newsModel.getUrlToImage());
+                i.putExtra("content", newsModel.getContent());
                 i.putExtra("publishedAt", newsModel.getPublishedAt());
-                i.putExtra("name", newsModel.getName());
+                i.putExtra("author", newsModel.getAuthor());
+                if (newsModel.getAuthor() == null) {
+                    i.putExtra("author", "Unknown");
+                } else {
+                    i.putExtra("author" , newsModel.getAuthor());
+                }
                 i.putExtra("url", newsModel.getUrl());
                 context.startActivity(i);
             }
