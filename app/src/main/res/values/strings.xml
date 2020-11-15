@@ -27,4 +27,12 @@
     <string name="chose_daynight">You chose the Day/Night Mode.</string>
     <string name="chose_abouts">You chose the About.</string>
     <string name="chose_setting">You chose Setting.</string>
+
+    /SETTING
+    <string name="alarm_on_toast">Notification On!</string>
+    <string name="alarm_off_toast">Notification Off!</string>
+    <string name="notification_title">GReads Time</string>
+    <string name="notification_text">Baca berita yuk!</string>
+    <string name="alarm_off">Alarm off</string>
+    <string name="alarm_on">Alarm on</string>
 </resources>

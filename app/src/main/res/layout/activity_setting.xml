@@ -7,18 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".Setting">
 
-    <TextView
-        android:id="@+id/tv_setting"
+    <ToggleButton
+        android:id="@+id/alarmToggle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="24dp"
-        android:textAlignment="center"
-        android:text="Setting Page"
-        android:textSize="18sp"
+        android:textOff="@string/alarm_off"
+        android:textOn="@string/alarm_on"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
