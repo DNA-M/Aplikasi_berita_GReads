@@ -57,7 +57,7 @@ public class Setting extends AppCompatActivity {
                         String toastMessage;
                         if (isChecked) {
 
-                            long repeatInterval = 60000L;
+                            long repeatInterval = AlarmManager.INTERVAL_DAY;
 
                             long triggerTime = SystemClock.elapsedRealtime()
                                     + repeatInterval;
