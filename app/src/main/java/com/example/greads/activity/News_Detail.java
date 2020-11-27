@@ -1,29 +1,27 @@
-package com.example.greads;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+package com.example.greads.activity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.bumptech.glide.Glide;
+import com.example.greads.R;
+import com.example.greads.Utils.Time;
 
 public class News_Detail extends AppCompatActivity {
 
     private ProgressBar mProgressBar;
-    private WebView mWebView;
-    String Image, Title, Content,PublishedAt,Author;
+    String Image, Title, Content,PublishedAt,Author,Description;
     private ImageView newsImage;
     private TextView newsTitle, newsContent, newsPublishedAt, newsName, newsUrl;
 
@@ -46,17 +44,22 @@ public class News_Detail extends AppCompatActivity {
         Image= getIntent().getStringExtra("image");
         Title = getIntent().getStringExtra("title");
         Content= getIntent().getStringExtra("content");
+        Description= getIntent().getStringExtra("description");
         PublishedAt = getIntent().getStringExtra("publishedAt");
-        Author = getIntent().getStringExtra("author");
+        Author = getIntent().getStringExtra("source");
         url = getIntent().getStringExtra("url");
 
 
         Glide.with(getApplicationContext())
                 .load(Image).into(newsImage);
         newsTitle.setText(Title);
-        newsContent.setText(Content);
+        if(Content == null){
+            newsContent.setText(Description);
+        }else{
+            newsContent.setText(Content);
+        }
         newsPublishedAt.setText(Time.getTimeAgo(PublishedAt));
-        //newsUrl.setText("Lihat Lebih Lengkap");
+        newsUrl.setText("Lihat Lebih Lengkap");
         newsName.setText(Author);
 
         if(getSupportActionBar() != null)getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -66,9 +69,9 @@ public class News_Detail extends AppCompatActivity {
 
     }
 
-    //public void Url (View view) {
-        //startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
-   // }
+    public void Url (View view) {
+        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+    }
 
     public void bindView(){
         newsImage= findViewById(R.id.im_news_image);
@@ -76,7 +79,7 @@ public class News_Detail extends AppCompatActivity {
         newsContent= findViewById(R.id.tv_news_content);
         newsName = findViewById(R.id.tv_name);
         newsPublishedAt = findViewById(R.id.tv_news_date);
-       // newsUrl= findViewById(R.id.tv_url);
+        newsUrl= findViewById(R.id.tv_url);
     }
 
     @Override
@@ -89,6 +92,10 @@ public class News_Detail extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.share) {//share news
             shareUrl(url);
+        }
+        else if (item.getItemId() == android.R.id.home) {
+            this.finish();
+            return true;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -106,6 +113,6 @@ public class News_Detail extends AppCompatActivity {
         share.setType("text/plain");
         share.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
         share.putExtra(Intent.EXTRA_TEXT, url);
-        startActivity(Intent.createChooser(share, "Share to : "));
+        startActivity(Intent.createChooser(share, "Bagikan : "));
     }
 }

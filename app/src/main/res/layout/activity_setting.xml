@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Setting">
+    android:orientation="vertical"
+    tools:context=".activity.Setting">
 
-    <ToggleButton
-        android:id="@+id/alarmToggle"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textOff="@string/alarm_off"
-        android:textOn="@string/alarm_on"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/notifikasi"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="20dp"
+            android:text="@string/pengingat_harian"
+            android:textColor="@android:color/black" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/swDailyReminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="20dp" />
+
+    </RelativeLayout>
+</LinearLayout>

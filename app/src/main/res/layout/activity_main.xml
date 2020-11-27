@@ -1,51 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fitsSystemWindows="true">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/appbar"
+    <FrameLayout
+        android:id="@+id/toolbarMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:background="@drawable/desain_header"
+        android:fitsSystemWindows="true">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="58dp"
-            android:layout_alignParentTop="true"
-            app:logo="@drawable/icon_app"
-            android:minHeight="?attr/actionBarSize"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:layout_alignParentTop="true"
+                app:logo="@drawable/icon_app"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+            </androidx.appcompat.widget.Toolbar>
 
-        </androidx.appcompat.widget.Toolbar>
+    </FrameLayout>
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/toolbar"
-            android:scrollbars="horizontal"
-            app:tabMode="scrollable"
-            app:tabSelectedTextColor="#FFFFFF"
-            app:tabIndicatorHeight="5dp">
-
-        </com.google.android.material.tabs.TabLayout>
-    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+        android:id="@+id/llCurved"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_below="@+id/toolbarMain"
+        android:background="@drawable/bg_home_curve"
+        android:orientation="horizontal" />
 
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        android:layout_below="@+id/toolbarMain">
 
-    </androidx.viewpager.widget.ViewPager>
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <com.gauravk.bubblenavigation.BubbleNavigationLinearView
+            android:id="@+id/navigationBar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="5dp"
+            android:isScrollContainer="true"
+            android:scrollbars="horizontal"
+            android:background="@drawable/bg_rounded"
+            android:elevation="8dp"
+            android:padding="5dp">
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/general"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:bt_colorActive="@color/colorAccent"
+                app:bt_colorInactive="#ffffff"
+                app:bt_shape="@drawable/shape"
+                app:bt_icon="@drawable/ic_general"
+                app:bt_title="General"
+                app:bt_titlePadding="5dp"
+                app:bt_titleSize="10sp" />
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/health"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:bt_colorActive="@color/colorAccent"
+                app:bt_colorInactive="#ffffff"
+                app:bt_shape="@drawable/shape"
+                app:bt_icon="@drawable/ic_health"
+                app:bt_title="Health"
+                app:bt_titlePadding="5dp"
+                app:bt_titleSize="10sp" />
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/business"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:bt_colorActive="@color/colorAccent"
+                app:bt_colorInactive="#ffffff"
+                app:bt_shape="@drawable/shape"
+                app:bt_icon="@drawable/ic_business"
+                app:bt_title="Business"
+                app:bt_titlePadding="5dp"
+                app:bt_titleSize="10sp" />
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/sports"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:bt_colorActive="@color/colorAccent"
+                app:bt_colorInactive="#ffffff"
+                app:bt_shape="@drawable/shape"
+                app:bt_icon="@drawable/ic_sports"
+                app:bt_title="Sports"
+                app:bt_titlePadding="5dp"
+                app:bt_titleSize="10sp" />
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/enterainment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:bt_colorActive="@color/colorAccent"
+                app:bt_colorInactive="#ffffff"
+                app:bt_shape="@drawable/shape"
+                app:bt_icon="@drawable/ic_entertainment"
+                app:bt_title="Sports"
+                app:bt_titlePadding="5dp"
+                app:bt_titleSize="10sp" />
+
+            <com.gauravk.bubblenavigation.BubbleToggleView
+                android:id="@+id/science"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:bt_colorActive="@color/colorAccent"
+                app:bt_colorInactive="#ffffff"
+                app:bt_shape="@drawable/shape"
+                app:bt_icon="@drawable/ic_science"
+                app:bt_title="Sports"
+                app:bt_titlePadding="5dp"
+                app:bt_titleSize="10sp" />
+
+        </com.gauravk.bubblenavigation.BubbleNavigationLinearView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</RelativeLayout>

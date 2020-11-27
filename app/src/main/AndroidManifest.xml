@@ -5,6 +5,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:allowBackup="true"
@@ -15,22 +17,18 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,UnusedAttribute">
-        <receiver
-            android:name=".AlarmReceiver"
-            android:enabled="true"
-            android:exported="true"></receiver>
 
         <activity
-            android:name=".News_Detail"
+            android:name=".activity.News_Detail"
             android:label="@string/title_news_detail"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName=".activity.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".activity.MainActivity" />
         </activity>
-        <activity android:name=".SplashActivity">
+        <activity android:name=".activity.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,24 +36,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Setting"
+            android:name=".activity.Setting"
             android:label="@string/title_activity_setting"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".activity.MainActivity" />
         </activity>
         <activity
-            android:name=".About_Page"
+            android:name=".activity.About_Page"
             android:label="@string/title_activity_about"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".activity.MainActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <receiver
+            android:name=".notify.NotificationDailyReceiver"
+            android:enabled="true"
+            android:exported="true"
+            tools:ignore="ExportedReceiver" />
+
     </application>
 
 </manifest>

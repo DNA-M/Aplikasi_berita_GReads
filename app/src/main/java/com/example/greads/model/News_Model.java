@@ -18,9 +18,11 @@ public class News_Model {
     String url;
     @SerializedName("content")
     String content;
+    @SerializedName("source")
+    Source source;
 
 
-    public News_Model(String urlToImage, String title, String publishedAt, String author, String description, String url, String content) {
+    public News_Model(String urlToImage, String title, String publishedAt, String author, String description, String url, String content, Source source) {
         this.urlToImage = urlToImage;
         this.title = title;
         this.publishedAt = publishedAt;
@@ -28,7 +30,7 @@ public class News_Model {
         this.description = description;
         this.url = url;
         this.content = content;
-
+        this.source = source;
     }
 
     public String getUrlToImage() {
@@ -85,5 +87,13 @@ public class News_Model {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Source getSource() {
+        return source;
+    }
+
+    public void setSource(Source source) {
+        this.source = source;
     }
 }

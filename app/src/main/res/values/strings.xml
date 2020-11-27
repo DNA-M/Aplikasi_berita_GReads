@@ -7,32 +7,31 @@
     <string name="news_date">News Date</string>
     <string name="news_title">News Title</string>
     <string name="tv_name">tv Name</string>
-    <string name="title_activity_about">About</string>
-    <string name="title_activity_setting">Setting</string>
+    <string name="title_activity_about">Tentang</string>
+    <string name="title_activity_setting">Setelan</string>
     <string name="about">Salam berita, dari kami.</string>
     <string name="copyright">Kelompok 4 DNA-M</string>
     <string name="versi">Versi 1.0.0</string>
     <string name="title_news_detail">News Detail</string>
+    <string name="general">General</string>
+    <string name="health">Health</string>
+    <string name="business">Business</string>
+    <string name="sports">Sports</string>
+    <string name="entertainment">Entertainment</string>
+    <string name="science">Science</string>
 
     //NAVBAR
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_settings">Settings</string>
     <string name="my_app_title">GReads</string>
-    <string name="hello_world">Hello World!</string>
-    <string name="import_camera">Import</string>
-    <string name="daynight">Day/Night Mode</string>
-    <string name="abouts">About</string>
-    <string name="setting">Setting</string>
-    <string name="chose_daynight">You chose the Day/Night Mode.</string>
-    <string name="chose_abouts">You chose the About.</string>
-    <string name="chose_setting">You chose Setting.</string>
+    <string name="abouts">Tentang</string>
+    <string name="setting">Setelan</string>
+    <string name="notifikasi">Notifikasi</string>
+    <string name="pengingat_harian">Pengingat Harian</string>
+    <string name="search">Search</string>
+    <string name="welcome_to_greads">Welcome To GReads!</string>
+    <string name="date">News_Date</string>
+    <string name="lihat_lebih_lengkap">Lihat lebih lengkap</string>
 
-    /SETTING
-    <string name="alarm_on_toast">Notification On!</string>
-    <string name="alarm_off_toast">Notification Off!</string>
-    <string name="notification_title">GReads Time</string>
-    <string name="notification_text">Baca berita yuk!</string>
-    <string name="alarm_off">Alarm off</string>
-    <string name="alarm_on">Alarm on</string>
 </resources>

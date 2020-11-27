@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".About_Page">
+    tools:context=".activity.About_Page">
 
     <TextView
         android:id="@+id/tv_about"
@@ -35,6 +35,7 @@
         android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="200dp"
+        android:contentDescription="@string/app_name"
         android:src="@drawable/icon_app_splash"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent">

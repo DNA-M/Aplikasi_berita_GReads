@@ -13,4 +13,8 @@ public interface ApiService {
 
     @GET("/v2/top-headlines")
     Call<Response_News_Model> getListAllNews(@Query("country") String country, @Query("apiKey") String apiKey);
+
+    @GET("everything")
+    Call<Response_News_Model> getListSearchNews(@Query("q") String keyword, @Query("language") String language, @Query("sortBy") String sortBy, @Query("apiKey") String apiKey);
+
 }

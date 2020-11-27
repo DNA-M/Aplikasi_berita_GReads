@@ -1,11 +1,12 @@
-package com.example.greads;
+package com.example.greads.activity;
 
 
 import android.app.Activity;
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.greads.R;
 
 
 public class SplashActivity extends Activity {

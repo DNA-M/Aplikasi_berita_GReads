@@ -4,12 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment_entertainment">
+    tools:context=".fragment.fragment_entertainment">
 
-   <androidx.recyclerview.widget.RecyclerView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/rv_entertainment"/>
+   <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+       android:id="@+id/swipeRefreshLayout"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:id="@+id/rv_entertainment"/>
+   </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
 </LinearLayout>
